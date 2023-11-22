@@ -2,12 +2,12 @@ import java.awt.Color;
 import processing.core.PApplet;
 public class NoiseConfig extends PApplet {
 
-    float prvalue = 0.08F;
+    float prvalue = 0.1F;
 
     public static int SCREEN_HEIGHT = 1280;
     public static int SCREEN_WIDTH = 720;
 
-    public static int UNIT_SIZE = 15;
+    public static int UNIT_SIZE = 5;
 
     public void settings(){
         size(SCREEN_WIDTH,SCREEN_HEIGHT);
