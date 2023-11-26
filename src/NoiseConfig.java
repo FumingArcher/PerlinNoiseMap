@@ -2,15 +2,12 @@ import java.awt.Color;
 import processing.core.PApplet;
 public class NoiseConfig extends PApplet {
 
-    float prvalue = 0.1F;
-
-    float xoff = 0, yoff = 0;
-    float speed = 0.1F;
+    float prvalue = 0.08F;
 
     public static int SCREEN_HEIGHT = 1280;
     public static int SCREEN_WIDTH = 720;
 
-    public static int UNIT_SIZE = 5;
+    public static int UNIT_SIZE = 15;
 
     public void settings(){
         size(SCREEN_WIDTH,SCREEN_HEIGHT);
@@ -37,22 +34,10 @@ public class NoiseConfig extends PApplet {
 
 
         }
-        if(key == 'w'){
-            yoff -= speed;
-        }
-        if(key =='s'){
-            yoff += speed;
-        }
-        if(key == 'a'){
-            xoff -= speed;
-        }
-        if(key == 'd'){
-            xoff += speed;
-        }
     }
 
     int GetTileType(int x,int y){
-        float t = noise(xoff + x*prvalue,yoff + y*prvalue);
+        float t = noise(x*prvalue,y*prvalue);
         if(t<0.3){
             //water
             return color(0,0,255);
@@ -75,7 +60,6 @@ public class NoiseConfig extends PApplet {
     public static void main(String[] args){
         PApplet.main("NoiseConfig");
     }
-
 
 
 }
